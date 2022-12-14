@@ -17,4 +17,24 @@ public class Tests
         Assert.True (and.Calcular());
     }
 
+    OrGate or = new OrGate("Or");
+    AndGate and = new AndGate("And");
+    NotGate not = new NotGate("Not");
+
+    [Test]
+    public void OrGateTest()
+    {
+        OrGate or = new OrGate ("Or");
+        or.AgregarEntrada("A", l1);
+        or.AgregarEntrada("B", and);
+        Assert.True (or.Calcular());
+    }
+
+    [Test]
+    public void NotGateTest()
+    {
+        NotGate not = new NotGate ("Not");
+        not.AgregarEntrada("A", or);
+        Assert.True (not.Calcular());
+    }
 } 

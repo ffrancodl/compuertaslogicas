@@ -9,15 +9,15 @@ namespace Library
         public Gate (string name)
         {
             this.Name = name;
-            this.Entrada = new Dictionary <IInput, string>(); 
+            this.Entrada = new Dictionary <string, IInput>(); 
         }
         public string Name {get; set;}
 
-        public Dictionary <IInput, string> Entrada {get; set;}
+        public Dictionary <string, IInput> Entrada {get; set;}
 
         public void AgregarEntrada(string name, IInput valor)
         {
-            Entrada.Add(valor, name);
+            Entrada.Add(name, valor);
         }
         public abstract bool Calcular();
     }
