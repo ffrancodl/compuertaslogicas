@@ -12,7 +12,7 @@ public class Tests
     public void AndGateTest()
     {
         AndGate and = new AndGate ("And");
-        and.AgregarEntrada("A", l1);
+        and.AgregarEntrada("A", l2);
         and.AgregarEntrada("B", l2);
         Assert.True (and.Calcular());
     }
@@ -26,7 +26,7 @@ public class Tests
     {
         OrGate or = new OrGate ("Or");
         or.AgregarEntrada("A", l1);
-        or.AgregarEntrada("B", and);
+        or.AgregarEntrada("B", l2);
         Assert.True (or.Calcular());
     }
 
@@ -34,7 +34,7 @@ public class Tests
     public void NotGateTest()
     {
         NotGate not = new NotGate ("Not");
-        not.AgregarEntrada("A", or);
+        not.AgregarEntrada("A", l1);
         Assert.True (not.Calcular());
     }
 } 
